@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <EnableNativeSanitizers>true</EnableNativeSanitizers>
+    <LinkStandardCPlusPlusLibrary>true</LinkStandardCPlusPlusLibrary>
+    <OutputType>Exe</OutputType>
+    <Nullable>enable</Nullable>
+    <PublishAot>true</PublishAot>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <DirectPInvoke Include="nativeaotasan" />
+    <NativeLibrary Include="libnativeaotasan.a" />
+    <LinkerArg Include="-fsanitize=address" />
+  </ItemGroup>
+</Project>
